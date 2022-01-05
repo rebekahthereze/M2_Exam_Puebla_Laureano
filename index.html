@@ -1,9 +1,33 @@
 <html>
     <head>
-        <link rel="stylesheet" src='style.css'>
+        <link rel="stylesheet" href='style.css'>
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="title-container">
+            <h1 class="title">Yoshi</h1>
+            <h4 class="desc">&#10006; an online pet adoption &#9825; </h4>
 
+        </div>
+        <div class="containers">
+            <div class="list-container">
+                <h3 id="list-title" class="list-title">your list</h3>
+                <div id="selected-container" class="selected">
+                    <img id ="list-img" class="list-img">
+                    <h3 id="list" class="list"></h3>
+                </div>
+                
+            </div>
+            <div class="pet-container">
+                <img id="pet" class="pet">
+                <h5 id="petName" class="petName"></h5>
+                <div>
+                    <button class="cross" id="cross"> &#10006; </button>
+                    <button class="heart" id="heart"> &#9825; </button>
+                </div>
+            </div>
+        </div>
+        
     </body>
     <script src='animal-script.js'></script>
 </html>

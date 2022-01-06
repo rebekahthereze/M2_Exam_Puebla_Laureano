@@ -12,7 +12,6 @@ html {
     font-family: 'Fredoka One', cursive;
     color: #9C4035;
     font-size: 80px;
-
 }
 
 .desc {
@@ -61,8 +60,6 @@ html {
 .selected {
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
-    /* justify-content: space-evenly; */
     align-items: center;
     justify-content: flex-start;
     text-align: center;
@@ -77,13 +74,12 @@ html {
     text-align: center;
     padding-top: 40px;
     margin-left:1%;
-
-    
 }
 
 .pet {
     height: 350px;
     border-radius: 20px;
+    visibility: visible;
 }
 
 .petName {
@@ -98,6 +94,7 @@ button {
     width: 50px;
     height: 50px;
     color: snow;
+    visibility: visible;
 }
 
 .heart {

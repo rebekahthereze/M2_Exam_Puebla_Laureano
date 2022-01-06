@@ -45,7 +45,7 @@ let petNames = [ 'Usain | 13 Years Old', 'Donkie | 8 Years Old', 'Kwek | 1 Year 
 // petNames[9] = 'Howl | 12 Years Old';
 
 function randomPet () {
-    let randNum = Math.floor((Math.random() * petImg.length));//randsom selection of pets
+    let randNum = Math.floor((Math.random() * petImg.length));//random selection of pets
     pet.src = petImg[randNum];//change src of a pet image
     petName.innerHTML = petNames[randNum];
     currNum = randNum;
@@ -57,45 +57,52 @@ cross.onclick = randomPet;
 let counter = 0;
 
 heart.onclick = function() {
-    petNameList.push(petNames[currNum]);
-    petImgList.push(petImg[currNum]);
-    // petList.push([petNames[currNum], petImg[currNum]]);
-    // console.log(petList[counter][0], petList[counter][1]);
-    // list =  petList[counter][0];
-    // counter = counter + 1;
-    // console.log(counter);
-    // list.innerHTML = petNameList;
-    // document.getElementById("list-img").src = petImgList;
-    list.innerHTML = petNames[currNum];
-    document.getElementById("list-img").src = petImg[currNum];
 
-    addPetInList(petImg[currNum],petNames[currNum]);
-    // var e = document.createElement('h3');
-    // e.innerHTML = petNames[currNum];
-    // e.class="list-img";
 
-    // while(e.firstChild) {
-    //     element.appendChild(e.firstChild);
-    // }
+    if(counter<10){
+        petNameList.push(petNames[currNum]);
+        petImgList.push(petImg[currNum]);
+        // petList.push([petNames[currNum], petImg[currNum]]);
+        // console.log(petList[counter][0], petList[counter][1]);
+        // list =  petList[counter][0];
+        // counter = counter + 1;
+        // console.log(counter);
+        // list.innerHTML = petNameList;
+        // document.getElementById("list-img").src = petImgList;
 
-    petNames.splice(currNum, 1);//restart animals
-    petImg.splice(currNum, 1);//restart animals
-    randomPet();
+        // list.innerHTML = petNames[currNum];
+        // document.getElementById("list-img").src = petImg[currNum];
+
+        addPetInList(petImg[currNum],petNames[currNum]);
+
+        petNames.splice(currNum, 1);//restart animals
+        petImg.splice(currNum, 1);//restart animals
+        randomPet();
+        counter+=1;
+    }else {
+        const nullText=document.getElementById('petName');
+        nullText.innerHTML = "Thank you for choosing Yoshi App";
+        document.getElementById("pet").alt = 'No Pictures';
+    }
+
 }
 //adds element in the list
 function addPetInList(animalLink,animalName ){
     var animalLink=animalLink;
     var animalName=animalName;
+
     //adds div inside the parent div of list container
     const parentDiv=document.getElementById('parent-div');
     const newDiv=document.createElement('div');
     parentDiv.appendChild(newDiv);
     newDiv.classList.add('selected');
+
     //adds image inside div and its animal image link
     const newPetImage=document.createElement('img');
     newPetImage.classList.add('list-img');
     newPetImage.src=animalLink;
     newDiv.appendChild(newPetImage);
+
     //adds name inside div and its animal name
     const newPetName=document.createElement('h3');
     newPetName.classList.add('list')

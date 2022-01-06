@@ -28,8 +28,8 @@ html {
     display: flex;
     flex-direction: row;
     padding-top: 20px;
-    justify-content: space-evenly;
-    height: 550px;
+    justify-content: center;
+    height: 1050px;
 }
 
 .list-container {
@@ -37,6 +37,8 @@ html {
     width: 300px;
     border-radius: 30px;
     text-align: center;
+    display:flex;
+    flex-direction: column;
 }
 
 .list-title {
@@ -47,6 +49,8 @@ html {
 .list-img {
     border-radius: 100%;
     height: 60px;
+    margin-left: 5%;
+    margin-right:5%;
 }
 
 .list {
@@ -57,15 +61,23 @@ html {
 .selected {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    justify-content: space-evenly;
+    /* justify-content: center; */
+    /* justify-content: space-evenly; */
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 .pet-container {
     background-color: whitesmoke;
     width: 600px;
     border-radius: 30px;
     text-align: center;
     padding-top: 40px;
+    margin-left:1%;
+
     
 }
 

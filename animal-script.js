@@ -45,8 +45,8 @@ let petNames = [ 'Usain | 13 Years Old', 'Donkie | 8 Years Old', 'Kwek | 1 Year 
 // petNames[9] = 'Howl | 12 Years Old';
 
 function randomPet () {
-    let randNum = Math.floor((Math.random() * petImg.length));
-    pet.src = petImg[randNum];
+    let randNum = Math.floor((Math.random() * petImg.length));//randsom selection of pets
+    pet.src = petImg[randNum];//change src of a pet image
     petName.innerHTML = petNames[randNum];
     currNum = randNum;
 }
@@ -68,7 +68,38 @@ heart.onclick = function() {
     // document.getElementById("list-img").src = petImgList;
     list.innerHTML = petNames[currNum];
     document.getElementById("list-img").src = petImg[currNum];
-    petNames.splice(currNum, 1);
-    petImg.splice(currNum, 1);
+
+    addPetInList(petImg[currNum],petNames[currNum]);
+    // var e = document.createElement('h3');
+    // e.innerHTML = petNames[currNum];
+    // e.class="list-img";
+
+    // while(e.firstChild) {
+    //     element.appendChild(e.firstChild);
+    // }
+
+    petNames.splice(currNum, 1);//restart animals
+    petImg.splice(currNum, 1);//restart animals
     randomPet();
+}
+//adds element in the list
+function addPetInList(animalLink,animalName ){
+    var animalLink=animalLink;
+    var animalName=animalName;
+    //adds div inside the parent div of list container
+    const parentDiv=document.getElementById('parent-div');
+    const newDiv=document.createElement('div');
+    parentDiv.appendChild(newDiv);
+    newDiv.classList.add('selected');
+    //adds image inside div and its animal image link
+    const newPetImage=document.createElement('img');
+    newPetImage.classList.add('list-img');
+    newPetImage.src=animalLink;
+    newDiv.appendChild(newPetImage);
+    //adds name inside div and its animal name
+    const newPetName=document.createElement('h3');
+    newPetName.classList.add('list')
+    newPetName.innerHTML=animalName;
+    newDiv.appendChild(newPetName);
+
 }
